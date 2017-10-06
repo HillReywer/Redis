@@ -28,10 +28,16 @@
     echo 'sysctl -w net.core.somaxconn=65535' >> /etc/rc.local
     echo 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' >> /etc/rc.local
   
-# Reboot server   
-    
+# Additional configuration
+
+    cat /etc/redis.conf | sed 's/^appendsonly*/appendsonly yes/g' > /etc/redis.conf
+    cat /etc/redis.conf | sed 's/^apeendfsync*/appendfsync everysec/g' > /etc/redis.conf
+    systemctl restart redis
+
+# Reboot server
+
     reboot
- 
+
 # Old version (if you want))
 # Need to be download into destination folder
 # tar xzf redis-3.2.5.tar.gz
