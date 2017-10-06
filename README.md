@@ -1,2 +1,2 @@
 # Redis
-Redis 3.2 install script
+Redis:latest install script
