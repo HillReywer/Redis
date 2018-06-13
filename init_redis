@@ -30,8 +30,8 @@
   
 # Additional configuration
 
-    cat /etc/redis.conf | sed 's/^appendsonly*/appendsonly yes/g' > /etc/redis.conf
-    cat /etc/redis.conf | sed 's/^apeendfsync*/appendfsync everysec/g' > /etc/redis.conf
+    tail -n 100 /etc/redis.conf | sed 's/^appendsonly*/appendsonly yes/g' > /etc/redis.conf
+    tail -n 100 /etc/redis.conf | sed 's/^apeendfsync*/appendfsync everysec/g' > /etc/redis.conf
     systemctl restart redis
 
 # Reboot server
