@@ -18,10 +18,10 @@ items:
         containers:
         - image: #Path to local image
           imagePullPolicy: Always
-          name: redis 
+          name: redis
           volumeMounts:
             - mountPath: /redis-master-data
-              name: data 
+              name: data
           ports:
             - containerPort: 6379
           resources: {}
