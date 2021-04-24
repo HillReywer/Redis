@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:20.10
 
 RUN apt update -y
 RUN apt install redis-server -y
